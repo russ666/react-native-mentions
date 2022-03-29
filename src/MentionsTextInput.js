@@ -75,7 +75,7 @@ export default class MentionsTextInput extends Component {
   identifyKeyword(val) {
     if (this.isTrackingStarted) {
       const boundary = this.props.triggerLocation === 'new-word-only' ? 'B' : '';
-      const pattern = new RegExp(`\\${boundary}${this.props.trigger}[a-z0-9_-]+|\\${boundary}${this.props.trigger}`, `gi`);
+      const pattern = new RegExp(`\\${boundary}${this.props.trigger}[a-zа-я0-9_-]+|\\${boundary}${this.props.trigger}`, `gi`);
       const keywordArray = val.match(pattern);
       if (keywordArray && !!keywordArray.length) {
         const lastKeyword = keywordArray[keywordArray.length - 1];
